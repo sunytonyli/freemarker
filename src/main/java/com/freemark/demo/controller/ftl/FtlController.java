@@ -1,4 +1,4 @@
-package com.freemark.demo.ftl;
+package com.freemark.demo.controller.ftl;
 
 import java.text.DateFormat;
 import java.util.Date;
