@@ -58,7 +58,7 @@ public class ExportWordTest {
 
 	        /* Get the template (uses cache internally) */
 	        Configuration cfg = freemarkerConfig.getConfiguration();
-	        Template temp = cfg.getTemplate("testword.ftl");
+	        Template temp = cfg.getTemplate("report.ftl");
 
 	        /* Merge data-model with template */
 	        //Writer out = new OutputStreamWriter(System.out);

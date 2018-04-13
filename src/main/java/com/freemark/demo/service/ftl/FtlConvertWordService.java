@@ -49,7 +49,8 @@ public class FtlConvertWordService {
 		try {
 
 			out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outFile), "UTF-8"));
-
+			temp.process(dataMap, out);
+			
 		} catch (FileNotFoundException fex) {
 			
 			logger.error("start from ftl convert word97-03, templateFile[{}], toFile[{}] exception:", fex);
@@ -61,8 +62,6 @@ public class FtlConvertWordService {
 			}
 		}
 		
-		temp.process(dataMap, out);
-
 	}
 
 }
