@@ -5,5 +5,10 @@
 			<#list kinds as kind>
 				<#assign i = kind?index>
 				${i}
-				${kind.kindName}
+				${report.kinds[i].kindName}
 			</#list>
+			
+<#list 0..report.kinds?size-1 as i>
+${i}
+	${report.kinds[0].kindName}
+</#list>
