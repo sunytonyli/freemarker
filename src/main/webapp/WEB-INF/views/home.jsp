@@ -10,6 +10,7 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+<p> path = ${filePath} </p>
 
     <h1>Spring MVC Download File Example</h1>
 

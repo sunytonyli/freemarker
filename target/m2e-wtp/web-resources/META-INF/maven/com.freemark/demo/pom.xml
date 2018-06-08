@@ -14,6 +14,9 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 		<org.springframework.test-version>4.3.14.RELEASE</org.springframework.test-version>
 		<org.freemarker-version>2.3.28</org.freemarker-version>
+		<itext.version>7.1.2</itext.version>
+		<itext.pdfhtml.version>2.0.1</itext.pdfhtml.version>
+		<xdocreport.version>1.0.5</xdocreport.version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -63,6 +66,93 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>	
+		
+		<!-- itext -->
+		 <!-- always needed -->
+	    <dependency>
+	        <groupId>com.itextpdf</groupId>
+	        <artifactId>kernel</artifactId>
+	        <version>${itext.version}</version>
+	    </dependency>
+	
+	    <!-- always needed -->
+	    <dependency>
+	        <groupId>com.itextpdf</groupId>
+	        <artifactId>io</artifactId>
+	        <version>${itext.version}</version>
+	    </dependency>
+	
+	    <!-- always needed -->
+	    <dependency>
+	        <groupId>com.itextpdf</groupId>
+	        <artifactId>layout</artifactId>
+	        <version>${itext.version}</version>
+	    </dependency>
+	    
+	    <!-- only needed for Asian fonts -->
+	    <dependency>
+	        <groupId>com.itextpdf</groupId>
+	        <artifactId>font-asian</artifactId>
+	        <version>${itext.version}</version>
+	    </dependency>
+	    
+	    <!-- only needed for hyphenation -->
+	    <dependency>
+	        <groupId>com.itextpdf</groupId>
+	        <artifactId>hyph</artifactId>
+	        <version>${itext.version}</version>
+	    </dependency>
+	    
+	     <!-- pdfHTML -->
+		  <dependency>
+		    <groupId>com.itextpdf</groupId>
+		    <artifactId>html2pdf</artifactId>
+		    <version>${itext.pdfhtml.version}</version>
+		  </dependency>
+
+			<!-- xdocxreport -->
+<!-- 			<dependency>
+				<groupId>fr.opensagres.xdocreport</groupId>
+				<artifactId>org.apache.poi.xwpf.converter.core</artifactId>
+				<version>${xdocreport.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>fr.opensagres.xdocreport</groupId>
+				<artifactId>org.apache.poi.xwpf.converter.pdf</artifactId>
+				<version>${xdocreport.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>fr.opensagres.xdocreport</groupId>
+				<artifactId>fr.opensagres.xdocreport.itext.extension</artifactId>
+				<version>${xdocreport.version}</version>
+			</dependency> -->
+			<dependency>
+			  <groupId>fr.opensagres.xdocreport</groupId>
+			  <artifactId>fr.opensagres.xdocreport.converter.docx.xwpf</artifactId>
+			  <version>2.0.0</version>
+			</dependency>
+			<dependency>
+			    <groupId>fr.opensagres.xdocreport</groupId>
+			    <artifactId>fr.opensagres.xdocreport.document.tools</artifactId>
+			    <version>2.0.1</version>
+			    <exclusions>
+			    	<exclusion>
+					   <groupId>ch.qos.logback</groupId>
+					   <artifactId>logback-classic</artifactId>
+					</exclusion>
+					<exclusion>
+					   <groupId>ch.qos.logback</groupId>
+					   <artifactId>logback-core</artifactId>
+					</exclusion>
+			    </exclusions>
+
+			</dependency>
+			
+<!-- 			<dependency>
+			  <groupId>fr.opensagres.xdocreport</groupId>
+			  <artifactId>fr.opensagres.xdocreport.document.textstyling.markdown</artifactId>
+			  <version>${xdocreport.version}</version>
+			</dependency> -->
 		
 		<!-- Logging -->
 		<dependency>
