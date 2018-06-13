@@ -23,7 +23,11 @@ import fr.opensagres.xdocreport.template.TemplateEngineKind;
 
 import java.awt.Color;
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -46,6 +50,7 @@ public class XMlToDoc {
 	     static  void makeWord() throws Exception{
 	        /** 初始化配置文件 **/
 	        Configuration configuration = new Configuration(Configuration.VERSION_2_3_28);
+	        configuration.setEncoding(Locale.getDefault(), "UTF-8");
 	        String fileDirectory = basePath;
 	        /** 加载文件 **/
 	        configuration.setDirectoryForTemplateLoading(new File(fileDirectory));
@@ -63,7 +68,7 @@ public class XMlToDoc {
 	        String outFilePath = basePath+"data.xml";
 	        File docFile = new File(outFilePath);
 	        FileOutputStream fos = new FileOutputStream(docFile);
-	        Writer out = new BufferedWriter(new OutputStreamWriter(fos),10240);
+	        Writer out = new BufferedWriter(new OutputStreamWriter(fos, StandardCharsets.UTF_8),10240);
 	        template.process(dataMap,out);
 	        if(out != null){
 	            out.close();
